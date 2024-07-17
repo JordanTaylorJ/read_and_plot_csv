@@ -1,1 +1,3 @@
-# read_and_plot_csv
+# Read and Plot CSV 
+
+sample dataset from [data.gov](https://catalog.data.gov/dataset/)
