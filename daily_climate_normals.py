@@ -22,11 +22,21 @@ def read_file(file_name):
 def plot_stuff(df):
     dates = df["DATE"]
     daily_min = df["DLY-TMIN-NORMAL"]
+    daily_max = df["DLY-TMAX-NORMAL"]
     formatted_dates = []
     for date in dates:
         date_format = '%Y%m%d'
         formatted_dates.append(datetime.strptime(str(date), date_format))
-    plt.plot(formatted_dates, daily_min)
+    #plt.subplot(2,1,1)
+    plt.plot(formatted_dates, daily_min, c='maroon', ls="--", label='daily minimum')
+    #plt.legend(loc="upper left")
+    #plt.subplot(2,1,2)
+    plt.plot(formatted_dates, daily_max, c='navy', label="daily maximum")
+    plt.title("Daily Precipitation Normals")
+    plt.xlabel("date")
+    plt.ylabel("rain")
+    plt.legend(loc="upper left")
+    plt.xticks(rotation='vertical')
     plt.show() 
 
 if __name__ == "__main__":
